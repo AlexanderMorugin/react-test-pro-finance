@@ -1,0 +1,118 @@
+@import '../fonts/font.scss';
+
+:root {
+  // font
+  --font-family-main: 'Inter', Arial, Helvetica, sans-serif;
+
+  // font wiegth
+  --font-weigth-bold: 700;
+  --font-weigth-medium: 500;
+  --font-weigth-regular: 400;
+
+  // font xxs
+  --font-size-xxs: 12px;
+  --font-line-xxs: 16px;
+  --font-xxs-bold: var(--font-weigth-bold) var(--font-size-xxs) /
+    var(--font-line-xxs) var(--font-family-main);
+  --font-xxs-medium: var(--font-weigth-medium) var(--font-size-xxs) /
+    var(--font-line-xxs) var(--font-family-main);
+  --font-xxs-regular: var(--font-weigth-regular) var(--font-size-xxs) /
+    var(--font-line-xxs) var(--font-family-main);
+
+  // font xs
+  --font-size-xs: 14px;
+  --font-line-xs: 20px;
+  --font-xs-bold: var(--font-weigth-bold) var(--font-size-xs) /
+    var(--font-line-xs) var(--font-family-main);
+  --font-xs-medium: var(--font-weigth-medium) var(--font-size-xs) /
+    var(--font-line-xs) var(--font-family-main);
+  --font-xs-regular: var(--font-weigth-regular) var(--font-size-xs) /
+    var(--font-line-xs) var(--font-family-main);
+
+  // font s (h5, p1)
+  --font-size-s: 18px;
+  --font-line-s: 26px;
+  --font-s-bold: var(--font-weigth-bold) var(--font-size-s) / var(--font-line-s)
+    var(--font-family-main);
+  --font-s-medium: var(--font-weigth-medium) var(--font-size-s) /
+    var(--font-line-s) var(--font-family-main);
+  --font-s-regular: var(--font-weigth-regular) var(--font-size-s) /
+    var(--font-line-s) var(--font-family-main);
+
+  // font m (h3 small, h4)
+  --font-size-m: 22px;
+  --font-line-m: 26px;
+  --font-m-bold: var(--font-weigth-bold) var(--font-size-m) / var(--font-line-m)
+    var(--font-family-main);
+  --font-m-medium: var(--font-weigth-medium) var(--font-size-m) /
+    var(--font-line-m) var(--font-family-main);
+  --font-m-regular: var(--font-weigth-regular) var(--font-size-m) /
+    var(--font-line-m) var(--font-family-main);
+
+  // font l ( h1 small, h3 large)
+  --font-size-l: 24px;
+  --font-line-l: 28px;
+  --font-l-bold: var(--font-weigth-bold) var(--font-size-l) / var(--font-line-l)
+    var(--font-family-main);
+  --font-l-medium: var(--font-weigth-medium) var(--font-size-l) /
+    var(--font-line-l) var(--font-family-main);
+  --font-l-regular: var(--font-weigth-regular) var(--font-size-l) /
+    var(--font-line-l) var(--font-family-main);
+
+  // font xl (h2 small)
+  --font-size-xl: 24px;
+  --font-line-xl: 32px;
+  --font-xl-bold: var(--font-weigth-bold) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
+  --font-xl-medium: var(--font-weigth-medium) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
+  --font-xl-regular: var(--font-weigth-regular) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
+
+  // font xxl (h2 large)
+  --font-size-xxl: 32px;
+  --font-line-xxl: 40px;
+  --font-xxl-bold: var(--font-weigth-bold) var(--font-size-xxl) /
+    var(--font-line-xxl) var(--font-family-main);
+  --font-xxl-medium: var(--font-weigth-medium) var(--font-size-xxl) /
+    var(--font-line-xxl) var(--font-family-main);
+  --font-xxl-regular: var(--font-weigth-regular) var(--font-size-xxl) /
+    var(--font-line-xxl) var(--font-family-main);
+
+  // colors
+  --light-primary: #fff; // белый бекграунд и основной белый текст
+
+  --dark-primary: #171d2c; // темный бекграунд и основной темный текст
+  --dark-secondary: #283047;
+
+  --grey-primary: #f7f8f8;
+  --grey-secondary: #e6e9eb;
+  --grey-thirdary: #d7dade;
+
+  --blue-primary: #287eff;
+  --blue-secondary: #525c79;
+
+  --orange-primary: #ff6b17;
+
+  --border-primary: #e2e4e5;
+  --border-secondary: #d7dade;
+  --border-thirdary: #282f48;
+
+  --text-grey-primary: #babdc1;
+  --text-grey-secondary: #999ca2;
+
+  --bg-primary: #eff1f2;
+  --bg-secondary: #fafbfb;
+  --bg-thirdary: #eef5ff;
+
+  // ширина экрана
+  --width-xl: 1400px;
+  --width-l: 1024px;
+  --width-m: 768px;
+  --width-s: 360px;
+
+  // z-index
+  --z-index-one: 1;
+  --z-index-two: 2;
+  --z-index-three: 3;
+}
