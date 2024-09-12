@@ -1,0 +1,25 @@
+.sidebarMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+
+  &__titleBox {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__logo {
+    background: var(--blue-primary);
+    border-radius: 5px;
+    font: var(--font-l-medium);
+    color: var(--light-primary);
+    text-transform: uppercase;
+    padding: 0 5px;
+  }
+
+  &__title {
+    font: var(--font-l-medium);
+    color: var(--light-primary);
+  }
+}

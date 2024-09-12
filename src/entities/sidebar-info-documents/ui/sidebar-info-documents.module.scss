@@ -1,0 +1,25 @@
+.sidebarInfoDocuments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 40px;
+
+  &__linkBox {
+    border-bottom: 1px solid var(--blue-secondary);
+    padding-bottom: 5px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    font: var(--font-xs-regular);
+    color: var(--blue-secondary);
+    transition: 0.25s;
+
+    &:hover {
+      color: var(--light-primary);
+    }
+  }
+}

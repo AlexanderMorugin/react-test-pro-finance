@@ -1,0 +1,31 @@
+.sidebarContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--blue-primary);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.35s;
+
+  &__icon {
+    font-size: 20px;
+    color: var(--light-primary);
+    transition: 0.25s;
+  }
+
+  &__title {
+    font: var(--font-s-medium);
+    color: var(--light-primary);
+    transition: 0.25s;
+  }
+
+  &:hover {
+    background: var(--blue-secondary);
+  }
+
+  &:hover &__icon {
+    color: var(--orange-primary);
+  }
+}

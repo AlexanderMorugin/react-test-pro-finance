@@ -16,7 +16,7 @@ const SidebarMenuButton: FC<ISidebarMenuButton> = ({ icon, title }) => {
   };
 
   return (
-    <div>
+    <li>
       <button className={styles.sidebarMenuButton} onClick={handleClick}>
         <div className={styles.sidebarMenuButton__titleBox}>
           {icon}
@@ -41,7 +41,7 @@ const SidebarMenuButton: FC<ISidebarMenuButton> = ({ icon, title }) => {
           </span>
         )}
       </div>
-    </div>
+    </li>
   );
 };
 

@@ -1,10 +1,8 @@
-.app {
+.rootPage {
   display: flex;
   gap: 48px;
   width: 100%;
   max-width: var(--width-xl);
   margin: 0 auto;
   padding: 20px;
-
-  border: 1px solid red;
 }

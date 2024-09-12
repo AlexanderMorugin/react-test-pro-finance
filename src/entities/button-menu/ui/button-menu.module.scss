@@ -1,0 +1,35 @@
+.buttonMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  background: var(--dark-secondary);
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 7px;
+  transition: 0.25s;
+
+  &__title {
+    font: var(--font-xxs-regular);
+    color: var(--blue-secondary);
+    transition: 0.25s;
+  }
+
+  &__icon {
+    font-size: 12px;
+    color: var(--blue-secondary);
+    transition: 0.25s;
+  }
+
+  &:hover {
+    background: var(--blue-secondary);
+  }
+
+  &:hover &__icon {
+    color: var(--light-primary);
+  }
+
+  &:hover &__title {
+    color: var(--light-primary);
+  }
+}

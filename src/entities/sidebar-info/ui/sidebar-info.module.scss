@@ -1,0 +1,12 @@
+.sidebarInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px;
+
+  &__title {
+    font: var(--font-xs-regular);
+    color: var(--light-primary);
+    letter-spacing: 0.8px;
+  }
+}

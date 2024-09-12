@@ -1,0 +1,16 @@
+.sidebarInfoModule {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: fit-content;
+
+  &__title {
+    font: var(--font-xxs-regular);
+    color: var(--blue-secondary);
+  }
+
+  &__info {
+    font: var(--font-xs-medium);
+    color: var(--light-primary);
+  }
+}
