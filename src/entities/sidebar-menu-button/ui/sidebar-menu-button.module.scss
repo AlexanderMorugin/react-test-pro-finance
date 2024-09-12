@@ -1,0 +1,59 @@
+.sidebarMenuButton {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-secondary);
+  border-radius: 10px;
+  padding: 15px 10px;
+  transition: 0.35s;
+
+  &__titleBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__title {
+    font: var(--font-s-medium);
+    color: var(--light-primary);
+    transition: 0.25s;
+  }
+
+  &__arrow {
+    font-size: 30px;
+    color: var(--blue-secondary);
+    transition: 0.25s;
+
+    &_active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__children {
+    padding: 15px 0 20px;
+    transition: 0.5s;
+
+    &_close {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    font: var(--font-xs-regular);
+    color: var(--light-primary);
+    padding: 20px;
+  }
+
+  &:hover {
+    background: var(--blue-secondary);
+  }
+
+  &:hover &__arrow {
+    color: var(--orange-primary);
+  }
+
+  &:hover &__title {
+    color: var(--orange-primary);
+  }
+}
