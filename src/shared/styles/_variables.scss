@@ -59,15 +59,15 @@
   --font-l-regular: var(--font-weigth-regular) var(--font-size-l) /
     var(--font-line-l) var(--font-family-main);
 
-  // // font xl (h2 small)
-  // --font-size-xl: 24px;
-  // --font-line-xl: 32px;
-  // --font-xl-bold: var(--font-weigth-bold) var(--font-size-xl) /
-  //   var(--font-line-xl) var(--font-family-main);
-  // --font-xl-medium: var(--font-weigth-medium) var(--font-size-xl) /
-  //   var(--font-line-xl) var(--font-family-main);
-  // --font-xl-regular: var(--font-weigth-regular) var(--font-size-xl) /
-  //   var(--font-line-xl) var(--font-family-main);
+  // font xl (h2 small)
+  --font-size-xl: 24px;
+  --font-line-xl: 32px;
+  --font-xl-bold: var(--font-weigth-bold) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
+  --font-xl-medium: var(--font-weigth-medium) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
+  --font-xl-regular: var(--font-weigth-regular) var(--font-size-xl) /
+    var(--font-line-xl) var(--font-family-main);
 
   // // font xxl (h2 large)
   // --font-size-xxl: 32px;
@@ -92,11 +92,10 @@
   --blue-primary: #287eff;
   --blue-secondary: #657193;
   --blue-thirdary: #eef5ff;
-  // --blue-fourth: #eef5ff;
 
   --orange-primary: #ff6b17;
 
-  // --border-primary: #e2e4e5;
+  --border-primary: #5e6475;
   // --border-secondary: #d7dade;
   // --border-thirdary: #282f48;
 
@@ -105,7 +104,6 @@
 
   --bg-primary: #eff1f2;
   // --bg-secondary: #fafbfb;
-
 
   // ширина экрана
   --width-xl: 1400px;

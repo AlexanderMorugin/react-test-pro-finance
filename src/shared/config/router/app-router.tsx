@@ -1,6 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Routes from '../routes/routes';
-import { MainPage, RootPage } from '../../../pages';
+import {
+  AboutPage,
+  AgreementPage,
+  LegalPage,
+  MainPage,
+  PrivacyPage,
+  PublicPage,
+  RootPage,
+} from '../../../pages';
 
 const AppRouter = createBrowserRouter([
   {
@@ -14,19 +22,23 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: Routes.AGREEMENT,
-        element: <MainPage />,
+        element: <AgreementPage />,
       },
       {
         path: Routes.PRIVACY,
-        element: <MainPage />,
+        element: <PrivacyPage />,
       },
       {
         path: Routes.LEGAL_INFO,
-        element: <MainPage />,
+        element: <LegalPage />,
       },
       {
         path: Routes.PUBLIC_OFFER,
-        element: <MainPage />,
+        element: <PublicPage />,
+      },
+      {
+        path: Routes.ABOUT,
+        element: <AboutPage />,
       },
     ],
   },

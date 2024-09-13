@@ -1,0 +1,14 @@
+.profileBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+
+  &__icon {
+    font-size: 24px;
+  }
+
+  &__name {
+    font: var(--font-s-medium);
+  }
+}

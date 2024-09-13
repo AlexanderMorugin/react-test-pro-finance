@@ -1,0 +1,15 @@
+.customButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  padding: 10px;
+  transition: 0.25s;
+
+  &__iconAbout {
+    font-size: 12px;
+    color: var(--light-primary)
+  }
+}

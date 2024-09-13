@@ -1,0 +1,21 @@
+.dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+  height: 70px;
+  background: var(--blue-thirdary);
+  border-radius: 25px;
+  padding: 20px;
+
+  &__icon {
+    font-size: 18px;
+    color: var(--blue-primary);
+  }
+
+  &__date {
+    font: var(--font-s-medium);
+    color: var(--blue-primary);
+  }
+}

@@ -1,4 +1,8 @@
 import ButtonMenu from './button-menu';
+import CustomButton from './custom-button';
+import DateBox from './date-box';
+import ProfileBar from './profile-bar';
+import ProfileBox from './profile-box';
 import SidebarContact from './sidebar-contact';
 import SidebarInfo from './sidebar-info';
 import SidebarInfoContacts from './sidebar-info-contacts';
@@ -18,4 +22,8 @@ export {
   SidebarInfoModule,
   SidebarInfoDocuments,
   SidebarContact,
+  ProfileBar,
+  ProfileBox,
+  CustomButton,
+  DateBox,
 };

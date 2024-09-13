@@ -1,0 +1,22 @@
+.pageWidget {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  padding-top: 100px;
+
+  &__title {
+    font: var(--font-xl-bold);
+  }
+
+  &__link {
+    font: var(--font-s-regular);
+    color: var(--blue-primary);
+    text-decoration: underline;
+    transition: 0.25s;
+
+    &:hover {
+      color: var(--orange-primary);
+    }
+  }
+}
