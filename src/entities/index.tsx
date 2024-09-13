@@ -12,6 +12,8 @@ import SidebarInfoModule from './sidebar-info-module';
 import SidebarMenu from './sidebar-menu';
 import SidebarMenuButton from './sidebar-menu-button';
 import SidebarMenuHeader from './sidebar-menu-header';
+import FilterForm from './filter-form';
+import UploadBar from './upload-bar';
 
 export {
   SidebarMenu,
@@ -28,4 +30,6 @@ export {
   CustomButton,
   DateBox,
   PageHeading,
+  FilterForm,
+  UploadBar,
 };

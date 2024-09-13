@@ -13,7 +13,7 @@ const PageHeading: FC = () => {
     navigate(Routes.INSTRUCTIONS);
   };
   return (
-    <div className={styles.pageHeading}>
+    <section className={styles.pageHeading}>
       <h1 className={styles.pageHeading__title}>
         Остатки сформированы на 01.04.2023 г.
       </h1>
@@ -23,7 +23,7 @@ const PageHeading: FC = () => {
         onClick={handleRouting}
         instructions={true}
       />
-    </div>
+    </section>
   );
 };
 

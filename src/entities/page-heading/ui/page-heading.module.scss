@@ -11,5 +11,9 @@
   &__button {
     background: var(--dark-secondary);
     color: var(--light-primary);
+
+    &:hover {
+      background: var(--blue-secondary);
+    }
   }
 }

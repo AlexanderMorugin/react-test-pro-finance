@@ -24,7 +24,7 @@ const ProfileBar: FC = () => {
   };
 
   return (
-    <div className={styles.profileBar}>
+    <section className={styles.profileBar}>
       <div className={styles.profileBar__leftBox}>
         <ProfileBox name={name} />
         {name === user && <DateBox />}
@@ -42,7 +42,7 @@ const ProfileBar: FC = () => {
           about={true}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
