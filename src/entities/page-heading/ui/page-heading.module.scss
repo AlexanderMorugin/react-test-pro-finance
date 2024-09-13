@@ -1,0 +1,15 @@
+.pageHeading {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+  padding-top: 60px;
+
+  &__title {
+    font: var(--font-xxl-medium);
+  }
+
+  &__button {
+    background: var(--dark-secondary);
+    color: var(--light-primary);
+  }
+}

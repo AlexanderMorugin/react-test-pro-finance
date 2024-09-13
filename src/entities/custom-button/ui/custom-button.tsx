@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { FaLongArrowAltRight } from 'react-icons/fa';
+import { FaLongArrowAltRight, FaClipboardList } from 'react-icons/fa';
 
 import styles from './custom-button.module.scss';
 
@@ -8,6 +8,7 @@ interface ICustomButton {
   title: string;
   onClick: () => void;
   about?: boolean;
+  instructions?: boolean;
 }
 
 const CustomButton: FC<ICustomButton> = ({
@@ -15,11 +16,21 @@ const CustomButton: FC<ICustomButton> = ({
   title,
   onClick,
   about = false,
+  instructions = false,
 }) => {
   return (
-    <button className={`${className} ${styles.customButton}`} onClick={onClick}>
+    <button
+      type='button'
+      className={`${className} ${styles.customButton}`}
+      onClick={onClick}
+    >
+      {instructions && (
+        <FaClipboardList className={styles.customButton__icon} />
+      )}
       {title}
-      {about && <FaLongArrowAltRight className={styles.customButton__iconAbout}/>}
+      {about && (
+        <FaLongArrowAltRight className={styles.customButton__iconAbout} />
+      )}
     </button>
   );
 };

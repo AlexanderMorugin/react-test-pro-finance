@@ -1,6 +1,7 @@
 import ButtonMenu from './button-menu';
 import CustomButton from './custom-button';
 import DateBox from './date-box';
+import PageHeading from './page-heading';
 import ProfileBar from './profile-bar';
 import ProfileBox from './profile-box';
 import SidebarContact from './sidebar-contact';
@@ -26,4 +27,5 @@ export {
   ProfileBox,
   CustomButton,
   DateBox,
+  PageHeading,
 };

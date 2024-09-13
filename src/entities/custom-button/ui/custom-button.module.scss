@@ -8,6 +8,11 @@
   padding: 10px;
   transition: 0.25s;
 
+  &__icon {
+    font-size: 16px;
+    color: var(--light-primary);
+  }
+
   &__iconAbout {
     font-size: 12px;
     color: var(--light-primary)

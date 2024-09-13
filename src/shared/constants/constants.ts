@@ -8,3 +8,4 @@ export const LEGAL = 'Юридическая информация';
 export const PUBLIC = 'Публичная оферта';
 
 export const ABOUT = 'О нас';
+export const INSTRUCTIONS = 'Инструкции';

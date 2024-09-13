@@ -3,6 +3,7 @@ import Routes from '../routes/routes';
 import {
   AboutPage,
   AgreementPage,
+  InstructionsPage,
   LegalPage,
   MainPage,
   PrivacyPage,
@@ -39,6 +40,10 @@ const AppRouter = createBrowserRouter([
       {
         path: Routes.ABOUT,
         element: <AboutPage />,
+      },
+      {
+        path: Routes.INSTRUCTIONS,
+        element: <InstructionsPage />,
       },
     ],
   },
