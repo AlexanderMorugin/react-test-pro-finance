@@ -4,6 +4,7 @@ import {
   FilterForm,
   PageHeading,
   ProfileBar,
+  Table,
   UploadBar,
 } from '../../../entities';
 
@@ -16,6 +17,7 @@ const MainBlock: FC = () => {
       <PageHeading />
       <FilterForm />
       <UploadBar />
+      <Table />
     </main>
   );
 };
