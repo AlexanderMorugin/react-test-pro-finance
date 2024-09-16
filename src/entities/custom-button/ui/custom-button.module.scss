@@ -15,11 +15,16 @@
 
   &__iconAbout {
     font-size: 12px;
-    color: var(--light-primary)
+    color: var(--light-primary);
   }
 
   &__iconImport {
     font-size: 16px;
+    color: var(--dark-secondary);
+  }
+
+  &__iconReset {
+    font-size: 12px;
     color: var(--dark-secondary);
   }
 }

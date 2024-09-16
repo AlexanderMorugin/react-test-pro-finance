@@ -15,6 +15,7 @@ import SidebarMenuHeader from './sidebar-menu-header';
 import FilterForm from './filter-form';
 import UploadBar from './upload-bar';
 import Table from './table';
+import ExportBar from './export-bar';
 
 export {
   SidebarMenu,
@@ -33,5 +34,6 @@ export {
   PageHeading,
   FilterForm,
   UploadBar,
+  ExportBar,
   Table,
 };

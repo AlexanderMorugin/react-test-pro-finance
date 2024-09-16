@@ -41,27 +41,27 @@
     }
   }
 
-  &__buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  // &__buttons {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 10px;
+  // }
 
-  &__buttonSubmit {
-    background: var(--blue-primary);
-    color: var(--light-primary);
+  // &__buttonSubmit {
+  //   background: var(--blue-primary);
+  //   color: var(--light-primary);
 
-    &:hover {
-      background: var(--blue-secondary);
-    }
-  }
+  //   &:hover {
+  //     background: var(--blue-secondary);
+  //   }
+  // }
 
-  &__buttonUpload {
-    background: var(--dark-secondary);
-    color: var(--light-primary);
+  // &__buttonUpload {
+  //   background: var(--dark-secondary);
+  //   color: var(--light-primary);
 
-    &:hover {
-      background: var(--blue-secondary);
-    }
-  }
+  //   &:hover {
+  //     background: var(--blue-secondary);
+  //   }
+  // }
 }

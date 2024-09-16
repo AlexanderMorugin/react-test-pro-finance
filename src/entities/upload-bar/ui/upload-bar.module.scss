@@ -1,23 +1,35 @@
 .uploadBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   border-top: 1px solid var(--border-thirdary);
   border-bottom: 1px solid var(--border-thirdary);
   margin-top: 30px;
+  margin-bottom: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
 
   &__buttons {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     width: fit-content;
   }
 
   &__button {
     font: var(--font-xs-medium);
+    padding: 0;
+
+    &_reset {
+      border-left: 1px solid var(--border-thirdary);
+      border-radius: 0;
+      padding-left: 30px;
+    }
 
     &:hover {
       color: var(--blue-primary);
     }
   }
+
 }

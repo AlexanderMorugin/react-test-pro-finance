@@ -11,12 +11,14 @@ import {
 import styles from './main-block.module.scss';
 
 const MainBlock: FC = () => {
+
+
   return (
     <main className={styles.mainBlock}>
       <ProfileBar />
       <PageHeading />
       <FilterForm />
-      <UploadBar />
+      {/* <UploadBar /> */}
       <Table />
     </main>
   );

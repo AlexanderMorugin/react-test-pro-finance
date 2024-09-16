@@ -72,7 +72,7 @@ const FilterForm: FC = () => {
             </label>
           </div>
 
-          <div className={styles.filterForm__buttons}>
+          {/* <div className={styles.filterForm__buttons}>
             <CustomButton
               className={styles.filterForm__buttonSubmit}
               type='submit'
@@ -87,7 +87,7 @@ const FilterForm: FC = () => {
               upload={true}
               onClick={() => {}}
             />
-          </div>
+          </div> */}
         </Form>
       )}
     </Formik>
