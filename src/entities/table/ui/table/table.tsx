@@ -16,9 +16,10 @@ import mockData from '../../../../mock-data/DATA.json';
 import TableCell from '../table-cell/table-cell';
 
 import styles from './table.module.scss';
-import { ExportBar, UploadBar } from '../../..';
+import { ExportBar, TotalBar, UploadBar } from '../../..';
+import useTotal from '../../../../shared/hooks/use-total';
 
-type Product = {
+export type Product = {
   id: number;
   barcode: number;
   product_brand: string;
@@ -147,7 +148,8 @@ const Table = () => {
     download(csvConfig)(csv);
   };
 
-  const countSum = data.reduce((acc, n) => acc + Number(n.product_quantity), 0);
+  const { totalQuantity, totalPrice } = useTotal(data);
+  // const totalQuantity = data.reduce((acc, n) => acc + Number(n.product_quantity), 0);
 
   return (
     <div className={styles.table}>
@@ -160,7 +162,10 @@ const Table = () => {
       </div> */}
 
       <ExportBar handleExportData={handleExportData} />
-      <UploadBar handleDowloadData={handleDowloadData} handleResetData={handleResetData}/>
+      <UploadBar
+        handleDowloadData={handleDowloadData}
+        handleResetData={handleResetData}
+      />
 
       {showTable && (
         <div className={styles.table__container}>
@@ -215,7 +220,9 @@ const Table = () => {
             </tfoot>
           </table>
 
-          <div>{countSum}</div>
+          <TotalBar totalQuantity={totalQuantity} totalPrice={totalPrice}/>
+
+          {/* <div className={styles.table__tot}>{countSum}</div> */}
         </div>
       )}
     </div>
