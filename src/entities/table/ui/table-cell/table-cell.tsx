@@ -1,7 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
-
 type Option = {
   label: string;
   value: string;
@@ -10,6 +8,7 @@ type Option = {
 const TableCell = ({ getValue, row, column, table }) => {
   const initialValue = getValue();
   const [value, setValue] = useState(initialValue);
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     setValue(initialValue);
@@ -19,20 +18,23 @@ const TableCell = ({ getValue, row, column, table }) => {
     table.options.meta?.updateData(row.index, column.id, value);
   };
 
+  const handleDoubleClick = () => {
+    setEditing(true);
+  };
   // const columnMeta = column.columnDef.meta;
   // const tableMeta = table.options.meta;
 
-  // const [editing, setEditing] = useState(false);
-
   // const [value, setValue] = useState("");
 
-  return (
+  return editing ? (
     <input
       value={value}
       onChange={(e) => setValue(e.target.value)}
       onBlur={onBlur}
-      type={column.columnDef.meta?.type || "text"}
+      type={column.columnDef.meta?.type || 'text'}
     />
+  ) : (
+    <span onDoubleClick={handleDoubleClick}>{value}</span>
   );
 
   // const onBlur = () => {
@@ -41,10 +43,6 @@ const TableCell = ({ getValue, row, column, table }) => {
   // const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
   //   setValue(e.target.value);
   //   tableMeta?.updateData(row.index, column.id, e.target.value);
-  // };
-
-  // const handleDoubleClick = () => {
-  //   setEditing(true);
   // };
 
   // const handleChange = (event) => {

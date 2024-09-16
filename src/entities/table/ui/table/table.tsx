@@ -3,7 +3,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel,
+  // getFilteredRowModel,
   // getPaginationRowModel,
   getSortedRowModel,
   Row,
@@ -14,10 +14,10 @@ import { FaCaretDown } from 'react-icons/fa';
 
 import mockData from '../../../../mock-data/DATA.json';
 import TableCell from '../table-cell/table-cell';
+import { ExportBar, UploadBar } from '../../..';
+import useTotal from '../../../../shared/hooks/use-total';
 
 import styles from './table.module.scss';
-import { ExportBar, TotalBar, UploadBar } from '../../..';
-import useTotal from '../../../../shared/hooks/use-total';
 
 export type Product = {
   id: number;
@@ -28,15 +28,12 @@ export type Product = {
   price: number;
 };
 
-// const countSum = '0'
-
 const columnHelper = createColumnHelper<Product>();
 
 const columns = [
   columnHelper.accessor('barcode', {
     cell: TableCell,
     header: 'Баркод',
-    // footer: 'Итого',
     meta: {
       type: 'number',
       required: true,
@@ -45,7 +42,6 @@ const columns = [
   columnHelper.accessor('product_brand', {
     cell: TableCell,
     header: 'Бренд',
-    // footer: '',
     meta: {
       type: 'text',
       required: true,
@@ -54,7 +50,6 @@ const columns = [
   columnHelper.accessor('product_name', {
     cell: TableCell,
     header: 'Наименование',
-    // footer: '',
     meta: {
       type: 'text',
       required: true,
@@ -63,7 +58,6 @@ const columns = [
   columnHelper.accessor('product_quantity', {
     cell: TableCell,
     header: 'Количество',
-    // footer: countSum,
     meta: {
       type: 'number',
       required: true,
@@ -72,7 +66,6 @@ const columns = [
   columnHelper.accessor('price', {
     cell: TableCell,
     header: 'Цена',
-    // footer: '',
     meta: {
       type: 'number',
       required: true,
@@ -83,17 +76,15 @@ const columns = [
 const Table = () => {
   const [data, setData] = useState<Product[]>([]);
   const [showTable, setShowTable] = useState<boolean>(false);
-
-  // const [sorting, setSorting] = useState([]);
+  const [sorting, setSorting] = useState([]);
   // const [globalFilter, setGlobalFilter] = useState('');
 
   const table = useReactTable({
     columns,
     data,
-    // state: {
-    //   sorting,
-    //   globalFilter,
-    // },
+    state: {
+      sorting,
+    },
 
     meta: {
       updateData: (rowIndex: number, columnId: string, value: string) =>
@@ -110,8 +101,8 @@ const Table = () => {
     },
     getCoreRowModel: getCoreRowModel(),
 
-    // onSortingChange: setSorting,
-    // getSortedRowModel: getSortedRowModel(),
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
 
     // onGlobalFilterChange: setGlobalFilter,
     // getFilteredRowModel: getFilteredRowModel(),
@@ -136,12 +127,11 @@ const Table = () => {
 
   const csvConfig = mkConfig({
     fieldSeparator: ',',
-    filename: 'Export_Data_Csv', // export file name (without .csv)
+    filename: 'Export_Data_Csv',
     decimalSeparator: '.',
     useKeysAsHeaders: true,
   });
 
-  // export function
   const exportExcel = (rows: Row<Product>[]) => {
     const rowData = rows.map((row) => row.original);
     const csv = generateCsv(csvConfig)(rowData);
@@ -149,18 +139,9 @@ const Table = () => {
   };
 
   const { totalQuantity, totalPrice } = useTotal(data);
-  // const totalQuantity = data.reduce((acc, n) => acc + Number(n.product_quantity), 0);
 
   return (
     <div className={styles.table}>
-      {/* <div>
-        <input
-          value={globalFilter ?? ''}
-          onChange={(e) => setGlobalFilter(e.target.value)}
-          placeholder='Search...'
-        />
-      </div> */}
-
       <ExportBar handleExportData={handleExportData} />
       <UploadBar
         handleDowloadData={handleDowloadData}
@@ -174,15 +155,22 @@ const Table = () => {
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <th key={header.id}>
-                      <button className={styles.table__theadTh}>
+                    <td key={header.id} className={styles.table__theadTd}>
+                      <button
+                        {...{
+                          className: header.column.getCanSort()
+                            ? styles.table__button
+                            : '',
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
                         {flexRender(
                           header.column.columnDef.header,
                           header.getContext()
                         )}
                         <FaCaretDown className={styles.table__arrow} />
                       </button>
-                    </th>
+                    </td>
                   ))}
                 </tr>
               ))}
@@ -203,26 +191,15 @@ const Table = () => {
             </tbody>
 
             <tfoot>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map((footer) => (
-                    <th key={footer.id}>
-                      <div className={styles.table__theadTh}>
-                        {flexRender(
-                          footer.column.columnDef.footer,
-                          footer.getContext()
-                        )}
-                      </div>
-                    </th>
-                  ))}
-                </tr>
-              ))}
+              <tr className={styles.table__tfoot}>
+                <td colSpan={3} className={styles.table__tfootTd}>
+                  Итого:
+                </td>
+                <td className={styles.table__tfootTd}>{totalQuantity}</td>
+                <td className={styles.table__tfootTd}>{totalPrice}</td>
+              </tr>
             </tfoot>
           </table>
-
-          <TotalBar totalQuantity={totalQuantity} totalPrice={totalPrice}/>
-
-          {/* <div className={styles.table__tot}>{countSum}</div> */}
         </div>
       )}
     </div>
