@@ -1,6 +1,6 @@
 <h1 align="center">PROФинанс - Тестовое задание Frontend React</h1>
 
-![Pralinecakes Demo](/1.png)
+![PROФинанс Демо](/ТЗ.png)
 
 ## Задание
 
