@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { FC, useEffect, useState } from 'react';
 
 import styles from './table-cell.module.scss';
 
-// type Option = {
-//   label: string;
-//   value: string;
-// };
 
-const TableCell = ({ getValue, row, column, table }) => {
+interface ITableCell {
+  getValue: any;
+  row: any;
+  column: any;
+  table: any;
+}
+
+const TableCell: FC<ITableCell> = ({ getValue, row, column, table }) => {
   const initialValue = getValue();
   const [value, setValue] = useState(initialValue);
   const [editing, setEditing] = useState(false);

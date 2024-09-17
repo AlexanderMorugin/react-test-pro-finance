@@ -10,7 +10,6 @@ const MainBlock: FC = () => {
       <ProfileBar />
       <PageHeading />
       <FilterForm />
-
       <Table />
     </main>
   );

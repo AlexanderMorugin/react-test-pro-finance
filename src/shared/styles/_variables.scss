@@ -39,16 +39,6 @@
   --font-s-regular: var(--font-weigth-regular) var(--font-size-s) /
     var(--font-line-s) var(--font-family-main);
 
-  // // font m (h3 small, h4)
-  // --font-size-m: 22px;
-  // --font-line-m: 26px;
-  // --font-m-bold: var(--font-weigth-bold) var(--font-size-m) / var(--font-line-m)
-  //   var(--font-family-main);
-  // --font-m-medium: var(--font-weigth-medium) var(--font-size-m) /
-  //   var(--font-line-m) var(--font-family-main);
-  // --font-m-regular: var(--font-weigth-regular) var(--font-size-m) /
-  //   var(--font-line-m) var(--font-family-main);
-
   // font l ( h1 small, h3 large)
   --font-size-l: 24px;
   --font-line-l: 28px;
@@ -80,14 +70,12 @@
     var(--font-line-xxl) var(--font-family-main);
 
   // colors
-  --light-primary: #fff; // белый бекграунд и основной белый текст
+  --light-primary: #fff;
 
-  --dark-primary: #171d2c; // темный бекграунд и основной темный текст
+  --dark-primary: #171d2c;
   --dark-secondary: #283047;
 
   --grey-primary: #f7f8f8;
-  // --grey-secondary: #e6e9eb;
-  // --grey-thirdary: #d7dade;
 
   --blue-primary: #287eff;
   --blue-secondary: #657193;
@@ -100,19 +88,10 @@
   --border-thirdary: #d7dade;
 
   --text-grey-primary: #babdc1;
-  // --text-grey-secondary: #999ca2;
 
   --bg-primary: #eff1f2;
   --bg-secondary: #fafbfb;
 
   // ширина экрана
-  --width-xl: 1600px;
-  --width-l: 1024px;
-  --width-m: 768px;
-  --width-s: 360px;
-
-  // z-index
-  --z-index-one: 1;
-  --z-index-two: 2;
-  --z-index-three: 3;
+  --width-xl: 1400px;
 }

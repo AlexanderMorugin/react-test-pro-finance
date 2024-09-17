@@ -3,8 +3,6 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  // getFilteredRowModel,
-  // getPaginationRowModel,
   getSortedRowModel,
   Row,
   SortingState,
@@ -82,7 +80,6 @@ const Table = () => {
   const [data, setData] = useState<Product[]>([]);
   const [showTable, setShowTable] = useState<boolean>(false);
   const [sorting, setSorting] = useState<SortingState>([]);
-  // const [globalFilter, setGlobalFilter] = useState('');
 
   const table = useReactTable({
     columns,
@@ -108,12 +105,6 @@ const Table = () => {
 
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
-
-    // onGlobalFilterChange: setGlobalFilter,
-    // getFilteredRowModel: getFilteredRowModel(),
-
-    // getCoreRowModel: getCoreRowModel(),
-    // getFilteredRowModel: getFilteredRowModel(),
   });
 
   const handleDowloadData = () => {
@@ -147,7 +138,7 @@ const Table = () => {
   const { totalQuantity, totalPrice } = useTotal(data);
 
   return (
-    <div className={styles.table}>
+    <>
       <ExportBar handleExportData={handleExportData} />
       <UploadBar
         handleDowloadData={handleDowloadData}
@@ -155,64 +146,67 @@ const Table = () => {
       />
 
       {showTable && (
-        <div className={styles.table__container}>
-          <table width={table.getTotalSize()}>
-            <thead>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => (
-                    <td key={header.id} width={header.getSize()}>
-                      <button
-                        {...{
-                          className: header.column.getCanSort()
-                            ? styles.table__button
-                            : '',
-                          onClick: header.column.getToggleSortingHandler(),
-                        }}
+        <div className={styles.table}>
+          <div className={styles.table__scroll}>
+            <table width={table.getTotalSize()}>
+              <thead>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <tr key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => (
+                      <td key={header.id} width={header.getSize()}>
+                        <button
+                          {...{
+                            className: header.column.getCanSort()
+                              ? styles.table__button
+                              : '',
+                            onClick: header.column.getToggleSortingHandler(),
+                          }}
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          <FaCaretDown className={styles.table__arrow} />
+                        </button>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+
+              <tbody>
+                {table.getRowModel().rows.map((row) => (
+                  <tr key={row.id} className={styles.table__tbodyTr}>
+                    {row.getVisibleCells().map((cell) => (
+                      <td
+                        key={cell.id}
+                        width={cell.column.getSize()}
+                        className={styles.table__tbodyTd}
                       >
                         {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
+                          cell.column.columnDef.cell,
+                          cell.getContext()
                         )}
-                        <FaCaretDown className={styles.table__arrow} />
-                      </button>
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody>
-              {table.getRowModel().rows.map((row) => (
-                <tr key={row.id} className={styles.table__tbodyTr}>
-                  {row.getVisibleCells().map((cell) => (
-                    <td
-                      key={cell.id}
-                      width={cell.column.getSize()}
-                      className={styles.table__tbodyTd}
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
 
-            <tfoot>
-              <tr className={styles.table__tfoot}>
-                <td colSpan={3} className={styles.table__tfootTd}>
-                  Итого:
-                </td>
-                <td className={styles.table__tfootTd}>{totalQuantity}</td>
-                <td className={styles.table__tfootTd}>{totalPrice}</td>
-              </tr>
-            </tfoot>
-          </table>
+              <tfoot>
+                <tr className={styles.table__tfoot}>
+                  <td colSpan={3} className={styles.table__tfootTd}>
+                    Итого:
+                  </td>
+                  <td className={styles.table__tfootTd}>{totalQuantity}</td>
+                  <td className={styles.table__tfootTd}>{totalPrice}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

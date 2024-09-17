@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+<h1 align="center">PROФинанс - Тестовое задание Frontend React</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Pralinecakes Demo](/1.png)
 
-Currently, two official plugins are available:
+## Задание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Сверстать страницу.
+Внизу таблицы должна быть строка итого:
+По нажатию кнопки «загрузить данные из csv», заполнить таблицу из произвольного data.json файла (в корне проекта), по нажатию «экспорт», сохранить данные в формате json или csv на диске.
+По двойному щелчку изменять содержимое ячейки, проверять валидность данных (на число)
+Пересчитывать итого при изменении данных.
+Использовать React, ts, open source UI компоненты.
+Будет плюсом:
+-реализовать фильтр по кнопке сформировать
+-сортировку по нажатию стрелочки рядом с заголовком.
+Тесты приветствуются!
+Верстка плюс минус похожа, изображение продублировано в архиве в лучшем качестве,
+данные таблицы произвольные, можно использовать DATA.json из архива.
 
-## Expanding the ESLint configuration
+## Выполнено
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Все, кроме:
 
-- Configure the top-level `parserOptions` property like this:
+- реализации фильтра
+- кнопки "Сформировать" и "Изменить данные" не действуют
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Используемые технологии и решения
+
+- React Router
+- Typescript в качестве основного языка проекта
+- Файлы стилей имеют расширение SCSS
+- Tanstack table
+- React Icons
+- Formik
+
+## Как запустить проект:
+
+Клонирование репозитория
+
+```
+git clone https://github.com/AlexanderMorugin/react-test-pro-finance.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Установка зависимостей
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm i
+```
+
+Запуск проекта
+
+```
+npm run dev
+```
+
+---
+
+Александр Моругин\
+сентябрь 2024г

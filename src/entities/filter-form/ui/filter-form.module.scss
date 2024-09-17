@@ -16,7 +16,6 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    // width: 200px;
     background: var(--light-primary);
     border: 1px solid var(--border-secondary);
     border-radius: 15px;
@@ -40,28 +39,4 @@
       max-width: 44px;
     }
   }
-
-  // &__buttons {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 10px;
-  // }
-
-  // &__buttonSubmit {
-  //   background: var(--blue-primary);
-  //   color: var(--light-primary);
-
-  //   &:hover {
-  //     background: var(--blue-secondary);
-  //   }
-  // }
-
-  // &__buttonUpload {
-  //   background: var(--dark-secondary);
-  //   color: var(--light-primary);
-
-  //   &:hover {
-  //     background: var(--blue-secondary);
-  //   }
-  // }
 }

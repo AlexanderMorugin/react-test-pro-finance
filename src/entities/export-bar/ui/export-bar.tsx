@@ -16,11 +16,9 @@ const ExportBar: FC<IExportBar> = ({ handleExportData }) => {
         type='submit'
         title='Сформировать'
         onClick={() => {}}
-        // disabled={isSubmitting}
       />
       <CustomButton
         className={styles.exportBar__buttonExport}
-        // type='submit'
         title='Экспорт'
         upload={true}
         onClick={handleExportData}
