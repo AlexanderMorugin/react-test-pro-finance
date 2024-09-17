@@ -2,7 +2,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
     background: var(--light-primary);
     border-radius: 20px;
     padding: 10px;

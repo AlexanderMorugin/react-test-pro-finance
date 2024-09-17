@@ -1,0 +1,15 @@
+.tableCell {
+  width: 100%;
+  height: 100%;
+
+  &:focus {
+    background: var(--light-primary);
+    box-shadow: 0 0 0 0.1rem var(--blue-secondary);
+    border-radius: 5px;
+  }
+
+  &:invalid {
+    box-shadow: 0 0 0 0.1rem var(--orange-primary);
+    border-radius: 5px;
+  }
+}

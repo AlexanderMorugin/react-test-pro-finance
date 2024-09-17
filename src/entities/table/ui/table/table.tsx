@@ -7,6 +7,7 @@ import {
   // getPaginationRowModel,
   getSortedRowModel,
   Row,
+  SortingState,
   useReactTable,
 } from '@tanstack/react-table';
 import { mkConfig, generateCsv, download } from 'export-to-csv';
@@ -35,8 +36,9 @@ const columns = [
     cell: TableCell,
     header: 'Баркод',
     meta: {
-      type: 'number',
+      type: 'text',
       required: true,
+      pattern: '^[0-9]+$',
     },
   }),
   columnHelper.accessor('product_brand', {
@@ -50,6 +52,7 @@ const columns = [
   columnHelper.accessor('product_name', {
     cell: TableCell,
     header: 'Наименование',
+    size: 300,
     meta: {
       type: 'text',
       required: true,
@@ -59,16 +62,18 @@ const columns = [
     cell: TableCell,
     header: 'Количество',
     meta: {
-      type: 'number',
+      type: 'text',
       required: true,
+      pattern: '^[0-9]+$',
     },
   }),
   columnHelper.accessor('price', {
     cell: TableCell,
     header: 'Цена',
     meta: {
-      type: 'number',
+      type: 'text',
       required: true,
+      pattern: '^[0-9]+$',
     },
   }),
 ];
@@ -76,7 +81,7 @@ const columns = [
 const Table = () => {
   const [data, setData] = useState<Product[]>([]);
   const [showTable, setShowTable] = useState<boolean>(false);
-  const [sorting, setSorting] = useState([]);
+  const [sorting, setSorting] = useState<SortingState>([]);
   // const [globalFilter, setGlobalFilter] = useState('');
 
   const table = useReactTable({
@@ -116,15 +121,12 @@ const Table = () => {
     setShowTable(true);
   };
 
-  const handleExportData = () => {
-    exportExcel(table.getFilteredRowModel().rows);
-  };
-
   const handleResetData = () => {
     setData([]);
     setShowTable(false);
   };
 
+  // exporting to csv file
   const csvConfig = mkConfig({
     fieldSeparator: ',',
     filename: 'Export_Data_Csv',
@@ -136,6 +138,10 @@ const Table = () => {
     const rowData = rows.map((row) => row.original);
     const csv = generateCsv(csvConfig)(rowData);
     download(csvConfig)(csv);
+  };
+
+  const handleExportData = () => {
+    exportExcel(table.getFilteredRowModel().rows);
   };
 
   const { totalQuantity, totalPrice } = useTotal(data);
@@ -150,12 +156,12 @@ const Table = () => {
 
       {showTable && (
         <div className={styles.table__container}>
-          <table>
+          <table width={table.getTotalSize()}>
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <td key={header.id} className={styles.table__theadTd}>
+                    <td key={header.id} width={header.getSize()}>
                       <button
                         {...{
                           className: header.column.getCanSort()
@@ -179,7 +185,11 @@ const Table = () => {
               {table.getRowModel().rows.map((row) => (
                 <tr key={row.id} className={styles.table__tbodyTr}>
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} className={styles.table__tbodyTd}>
+                    <td
+                      key={cell.id}
+                      width={cell.column.getSize()}
+                      className={styles.table__tbodyTd}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
