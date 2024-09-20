@@ -13,7 +13,7 @@ import { FaCaretDown } from 'react-icons/fa';
 
 import mockData from '../../../../mock-data/DATA.json';
 import TableCell from '../table-cell/table-cell';
-import { ExportBar, UploadBar } from '../../..';
+import { FilterForm, UploadBar } from '../../..';
 import useTotal from '../../../../shared/hooks/use-total';
 
 import styles from './table.module.scss';
@@ -113,8 +113,7 @@ const Table = () => {
   };
 
   const handleResetData = () => {
-    setData([]);
-    setShowTable(false);
+    setData(() => [...mockData]);
   };
 
   // exporting to csv file
@@ -139,7 +138,12 @@ const Table = () => {
 
   return (
     <>
-      <ExportBar handleExportData={handleExportData} />
+      <FilterForm
+        data={data}
+        setData={setData}
+        handleExportData={handleExportData}
+      />
+
       <UploadBar
         handleDowloadData={handleDowloadData}
         handleResetData={handleResetData}

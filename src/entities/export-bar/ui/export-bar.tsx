@@ -5,17 +5,21 @@ import { CustomButton } from '../..';
 import styles from './export-bar.module.scss';
 
 interface IExportBar {
+  disabled: () => boolean;
   handleExportData: () => void;
 }
 
-const ExportBar: FC<IExportBar> = ({ handleExportData }) => {
+const ExportBar: FC<IExportBar> = ({ disabled, handleExportData }) => {
   return (
     <div className={styles.exportBar}>
       <CustomButton
-        className={styles.exportBar__buttonSubmit}
+        className={
+          disabled()
+            ? styles.exportBar__disabled
+            : styles.exportBar__buttonSubmit
+        }
         type='submit'
         title='Сформировать'
-        onClick={() => {}}
       />
       <CustomButton
         className={styles.exportBar__buttonExport}

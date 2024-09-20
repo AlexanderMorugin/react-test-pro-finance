@@ -7,6 +7,7 @@
   &__buttonSubmit {
     background: var(--blue-primary);
     color: var(--light-primary);
+    border: 1px solid transparent;
 
     &:hover {
       background: var(--blue-secondary);
@@ -20,5 +21,11 @@
     &:hover {
       background: var(--blue-secondary);
     }
+  }
+
+  &__disabled {
+    background: var(--blue-thirdary);
+    color: var(--blue-secondary);
+    border: 1px solid var(--border-thirdary);
   }
 }

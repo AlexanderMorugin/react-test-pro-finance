@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { FilterForm, PageHeading, ProfileBar, Table } from '../../../entities';
+import { PageHeading, ProfileBar, Table } from '../../../entities';
 
 import styles from './main-block.module.scss';
 
@@ -9,7 +9,6 @@ const MainBlock: FC = () => {
     <main className={styles.mainBlock}>
       <ProfileBar />
       <PageHeading />
-      <FilterForm />
       <Table />
     </main>
   );
