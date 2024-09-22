@@ -1,5 +1,7 @@
 <h1 align="center">PROФинанс - Тестовое задание Frontend React</h1>
 
+В данном приложении используется локальный useState. Такое же приложение, но с использованием глобального стейта Redux Toolkit, можно посмотреть здесь <b><a href="https://github.com/AlexanderMorugin/react-test-pro-finance-redux">react-test-pro-finance-redux</a></b>.
+
 ![PROFinance Demo](/ТЗ.png)
 
 ## Задание
